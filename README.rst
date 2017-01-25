@@ -136,7 +136,7 @@ notation::
 
 **WARNING**
 
-__del__attr__, __getattr__, and __setattr__ are redefined
+__delattr__, __getattr__, and __setattr__ are redefined
 to operate on ``self`` instead of ``self.__dict__``.
 __setattr__ and __delattr__ work as expected, however while
 __getattr__ is redefined, __getattribute__ is not.  Since
