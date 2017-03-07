@@ -10,7 +10,7 @@ long_description = 'xml2py is hosted at https://github.com/pwexler/xml2py'
 
 setup(
         name='xml2py',
-        version="0.1.0",
+        version="0.2.0",
         author='Paul Wexler',
         author_email='paul.e.wexler@gmail.com',
         license='MIT',

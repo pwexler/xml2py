@@ -48,6 +48,15 @@ class TestXml2Py(unittest.TestCase):
         tup = xml2py.to_dotdict((dd, ))
         self.assertEqual(tup, ({}, ))
 
+    def test_to_list(self):
+        d = xml2py.dict_loads(self.xml_string)
+        dd = xml2py.to_list(d['Test']['a'], 'd')
+        self.assertEqual(dd, [{'_n': '4'}, {'_n': '5'}])
+        de = xml2py.to_list(d['Test']['a'], 'e')
+        self.assertEqual(de, ['e text', ])
+        df = xml2py.to_list(d['Test']['a'], 'f')
+        self.assertEqual(df, [])
+
 if __name__ == '__main__':
     unittest.main()
 

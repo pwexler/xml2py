@@ -11,6 +11,7 @@ __all__ = [
         'dict_load', 'dict_loads',
         'dotdict_load', 'dotdict_loads',
         'to_dotdict',
+        'to_list',
         ]
 
 def dict_load(xml_filename, **kwargs):
@@ -47,4 +48,14 @@ def dotdict_loads(xml_string, **kwargs):
     return DotDict(d)
 
 to_dotdict = DotDict.to_dotdict # pylint: disable=invalid-name
+
+def to_list(obj, key=None):
+    """ to_list(obj) returns obj if obj is a list, else [obj, ].
+    to_list(obj, key) returns to_list(obj[key]) if key is in obj,
+    else [].
+    """
+    if key is None:
+        return obj if isinstance(obj, list) else [obj]
+    else:
+        return to_list(obj[key]) if key in obj else []
 

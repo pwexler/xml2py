@@ -31,6 +31,11 @@ All kwargs are passed to XmlToDict.__init__
     object whose every (non-DotDict) dict is converted to
     a DotDict.
 
+* to_list(obj, key=None)
+    to_list(obj) returns obj if obj is a list, else [obj, ].
+    to_list(obj, key) returns to_list(obj[key]) if key is in obj,
+    else [].
+
 XmlToDict
 ---------
 ::
